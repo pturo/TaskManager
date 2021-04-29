@@ -1,0 +1,29 @@
+﻿@model TaskManager.Models.TaskModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="display-4">Szczegóły zadania</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+    <a class="btn btn-dark" asp-action="Index">Wróć do listy zadań</a>
+</div>
